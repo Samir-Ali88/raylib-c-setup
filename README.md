@@ -26,7 +26,8 @@ Add the bin folder of your MinGW installation to the PATH variable.
 
 This allows you to use gcc from any terminal or .bat file.
 
-Download Raylib
+Download Raylib 
+raylib-5.5_win64_mingw-w64.zip
 
 Grab the latest Raylib Windows package from raylib’s website
 [Download raylib v5.5](https://github.com/raysan5/raylib/releases/tag/5.5)
@@ -48,3 +49,5 @@ You should see your Raylib window pop up — congratulations!
 - How to install Raylib on Windows  
 - How to configure MinGW and VS Code  
 - How to compile and run your first Raylib program
+
+<b>Happy Coding</b>
