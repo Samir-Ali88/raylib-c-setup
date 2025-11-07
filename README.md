@@ -13,6 +13,7 @@ Huge thanks to the **Raylib team** for their incredible work and for making game
 ---
 
 ##🚨 Guide
+
 Download MinGW
 
 Get the standalone MinGW-w64 GCC installer (64-bit recommended).
@@ -28,7 +29,7 @@ This allows you to use gcc from any terminal or .bat file.
 Download Raylib
 
 Grab the latest Raylib Windows package from raylib’s website
-.
+[Download raylib v5.5](https://github.com/raysan5/raylib/releases/tag/5.5)
 
 Extract it somewhere easy to access.
 
