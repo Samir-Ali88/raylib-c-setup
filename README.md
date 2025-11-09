@@ -12,42 +12,87 @@ Huge thanks to the **Raylib team** for their incredible work and for making game
 
 ---
 
-##🚨 Guide
+# 🎮 Raylib + MinGW Setup Guide (Windows Only)
 
-Download MinGW
+This guide helps you quickly set up **Raylib** on **Windows** using **MinGW-w64** and run your first program.
 
-Get the standalone MinGW-w64 GCC installer (64-bit recommended).
+---
 
-Install it on your system.
+## ✅ Step 1 — Install MinGW (GCC Compiler)
 
-Add MinGW to Environment Variables
+1. Download MinGW-w64 (64-bit recommended):  
+   https://www.mingw-w64.org/downloads/
+2. Install it. During installation, select:
+   - **Architecture:** `x86_64`
+   - **Threads:** `posix`
+   - **Exception:** `seh`
+3. Find the **bin** folder inside the installation directory.
+4. Copy its path. Example:
 
-Add the bin folder of your MinGW installation to the PATH variable.
+---
 
-This allows you to use gcc from any terminal or .bat file.
+## ✅ Step 2 — Add MinGW to PATH
 
-Download Raylib 
-raylib-5.5_win64_mingw-w64.zip
+1. Press **Win + R**, type: `sysdm.cpl`
+2. Go to **Advanced → Environment Variables**
+3. Under *System Variables*, choose **Path → Edit → New**
+4. Paste the **bin** folder path.
+5. Click **OK** to save.
 
-Grab the latest Raylib Windows package from raylib’s website
-[Download raylib v5.5](https://github.com/raysan5/raylib/releases/tag/5.5)
+> Test in Command Prompt:
+If it prints version info, MinGW is working.
 
-Extract it somewhere easy to access.
+---
 
-Add Raylib Files to Your Code
+## ✅ Step 3 — Download Raylib for Windows
 
-Include the include folder in your compiler settings.
+Download the MinGW-ready Windows package:
 
-Link the lib folder 
-Run Your Code
 
-Double-click your .bat file to compile and run your program.
+From: https://www.raylib.com/
 
-You should see your Raylib window pop up — congratulations! 
+Extract it somewhere easy, e.g.:
 
-### 🚀 What You’ll Learn
-- How to install Raylib on Windows  
-- How to configure MinGW and VS Code  
-- How to compile and run your first Raylib program
 
-<b>Happy Coding</b>
+---
+
+## ✅ Step 4 — Link Raylib When Compiling
+
+In the extracted Raylib folder, note:
+
+
+Create a file named **build.bat** in your project folder:
+
+```bat
+gcc main.c -I C:\raylib\include -L C:\raylib\lib -lraylib -lopengl32 -lgdi32 -lwinmm -o game.exe
+game.exe
+#include "raylib.h"
+
+int main(void)
+{
+    InitWindow(800, 450, "Hello Raylib!");
+    while (!WindowShouldClose())
+    {
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
+        DrawText("Raylib is working!", 190, 200, 20, BLACK);
+        EndDrawing();
+    }
+    CloseWindow();
+    return 0;
+}
+#include "raylib.h"
+
+int main(void)
+{
+    InitWindow(800, 450, "Hello Raylib!");
+    while (!WindowShouldClose())
+    {
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
+        DrawText("Raylib is working!", 190, 200, 20, BLACK);
+        EndDrawing();
+    }
+    CloseWindow();
+    return 0;
+}
